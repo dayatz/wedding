@@ -53,11 +53,11 @@
     </style>
 </head>
 <body>
-    <div class='container'>
-        <div class="row">
+    <div class='container' id="app">
+        <div class="row" style="margin-top: 32px">
             <div class="card col s12 l8 offset-l2">
                 <div class="card-content">
-                    <p style="font-family: 'Raleway'">Hi <span style="font-weight: bold" id="to-name"></span>,</p>
+                    <p style="font-family: 'Raleway'">Hi <span style="font-weight: bold" id="to-name">{{ invite.name }}</span>,</p>
                     <div class="names" style="text-align: center; margin-top: 32px">
                         <p style="margin-left: -32px; font-size: 48px">Dayat</p>
                         <p style="font-family: 'Easy November'; font-size: 22px">&</p>
@@ -91,27 +91,31 @@
         </div>
     </div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/js/materialize.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.5.17/dist/vue.js"></script>
     <script>
-        var to;
-        var name = location.search.split('to=')[1];
-        if (name) {
-            to = name
-        } else {
-            to = 'you'
-        }
-        document.getElementById("to-name").innerHTML = to;
-        var data = [
-            {id: 1, name: ''},
-            {id: 2, name: ''},
-            {id: 3, name: ''},
-            {id: 4, name: ''},
-            {id: 5, name: ''},
-            {id: 6, name: ''},
-            {id: 7, name: ''},
-            {id: 8, name: ''},
-            {id: 9, name: ''},
-            {id: 10, name: ''},
-        ]
+        var app = new Vue({
+            el: '#app',
+            data: {
+                invites: [
+                    {id: '72fbe93a-b352-11e8-96f8-529269fb1459', name: 'Ivan'},
+                    {id: '72fbec5a-b352-11e8-96f8-529269fb1459', name: 'Emeet'},
+                    {id: '72fbf042-b352-11e8-96f8-529269fb1459', name: 'Maman'},
+                    {id: '72fbf196-b352-11e8-96f8-529269fb1459', name: 'Doni'},
+                ]
+            },
+            computed: {
+                code: function() {
+                    var uri = window.location.search.substring(1);
+                    return uri.split('=')[1];
+                },
+                invite: function() {
+                    var code = this.code;
+                    return this.invites.find(function (i) {
+                        return i.id == code
+                    })
+                }
+            },
+        })
     </script>
 </body>
 </html>
