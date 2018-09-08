@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/css/materialize.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+    <title>Dayat & Ela Wedding Invitation</title>
+    <style>
+        @font-face {
+            font-family: 'EasyNovember';
+            src: url('./fonts/EasyNovember.ttf')  format('truetype');
+        }
+        body {
+            background-color: #eee;
+        }
+        .c-container {
+            height: 400x;
+            width: 200px;
+            position: absolute;
+            top: -200px;
+            right: -100px;
+        }
+        .centered-text {
+            text-align: center !important;
+        }
+        .border-left-right {
+            border-right: 1px solid #ccc;
+            border-left: 1px solid #ccc;
+        }
+        .time-info {
+            margin-top: 32px;
+        }
+        .time-info * {
+            font-family: 'Raleway';
+        }
+        .names {
+            font-family: "EasyNovember"
+        }
+    </style>
+</head>
+<body>
+    <div class='container'>
+        <div class="row">
+            <div class="card col s8 offset-s2">
+                <div class="card-content">
+                    <p style="font-family: 'Raleway'">To: <span style="font-weight: bold" id="to-name"></span></p>
+                    <div class="names" style="text-align: center; margin-top: 32px">
+                        <p style="margin-left: -32px; font-size: 48px">Dayat</p>
+                        <p style="font-family: 'Easy November'; font-size: 22px">&</p>
+                        <p style="margin-left: 32px; font-size: 48px">Ela</p>
+                    </div>
+                    <div class="centered-text time-info" style="color:rgba(0,0,0,0.7); font-size: 16px">
+                        <p>Together with their parents</p>
+                        <p>invite you to celebrate their wedding.</p>
+                    </div>
+                    <div class="row time-info">
+                        <div class="col s4 centered-text" style="font-size: 14px; color:rgba(0,0,0,0.7);">
+                            <p>Akad</p>
+                            <p>08.00am</p>
+                        </div>
+                        <div class="col s4 centered-text border-left-right" style="font-size: 18px">
+                            <p>Ahad,</p>
+                            <p>16 September 2018</p>
+                        </div>
+                        <div class="col s4 centered-text" style="font-size: 14px;color:rgba(0,0,0,0.7);">
+                            <p>Resepsi</p>
+                            <p>10.00am</p>
+                        </div>
+                        <div class="col s12 centered-text time-info">
+                            <p>Jl. Ade Irma Suryani Gg.Panda 3 No.16, Monjok. Mataram</p>
+                        </div>
+                    </div>
+                </div>    
+            </div>
+        </div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/js/materialize.min.js"></script>
+    <script>
+        var to;
+        var name = location.search.split('to=')[1];
+        if (name) {
+            to = name
+        } else {
+            to = 'you'
+        }
+        document.getElementById("to-name").innerHTML = to;
+    </script>
+</body>
+</html>
