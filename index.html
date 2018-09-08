@@ -42,6 +42,14 @@
         .info {
             margin-bottom: 8px;
         }
+        .card {
+            background-image: url('./img/leaf.png'), url('./img/leaf2.png');
+            background-size: 150px;
+            background-color: #fff;
+            background-position: 20px 70px, right 20px top 70px;
+            background-repeat: no-repeat;
+            border-radius: 8px;
+        }
     </style>
 </head>
 <body>
@@ -74,7 +82,7 @@
                         </div>
                         <div class="col s12 centered-text time-info">
                             <p>Jl. Ade Irma Suryani Gg.Panda 3 No.16, Monjok. Mataram</p>
-                            <a href="https://www.google.com/maps/place/8%C2%B034'33.3%22S+116%C2%B007'23.1%22E/@-8.5762349,116.1211341,17z/data=!4m6!3m5!1s0x0:0x0!7e2!8m2!3d-8.5759217!4d116.1230758"
+                            <a style="margin-top: 8px" href="https://www.google.com/maps/place/8%C2%B034'33.3%22S+116%C2%B007'23.1%22E/@-8.5762349,116.1211341,17z/data=!4m6!3m5!1s0x0:0x0!7e2!8m2!3d-8.5759217!4d116.1230758"
                                 class="btn btn-small green lighten-2" target="_blank"><i class="material-icons left">location_on</i> Map</a>
                         </div>
                     </div>
@@ -92,6 +100,18 @@
             to = 'you'
         }
         document.getElementById("to-name").innerHTML = to;
+        var data = [
+            {id: 1, name: ''},
+            {id: 2, name: ''},
+            {id: 3, name: ''},
+            {id: 4, name: ''},
+            {id: 5, name: ''},
+            {id: 6, name: ''},
+            {id: 7, name: ''},
+            {id: 8, name: ''},
+            {id: 9, name: ''},
+            {id: 10, name: ''},
+        ]
     </script>
 </body>
 </html>
